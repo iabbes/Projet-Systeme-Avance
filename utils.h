@@ -9,6 +9,6 @@
 
 #include "text.h"
 
-void raler (char* msg);
+void complain (char* msg);
 
 #endif
