@@ -4,23 +4,27 @@
 #include <errno.h>
 #include <unistd.h>
 #include "utils.h"
-#include "text.h"
+#include "process.h"
 
 #define STRCMD 30 
 
 int main(int argc, char const *argv[])
 {
-    char inputCmd[STRCMD];
-    bool isRunning = true;
+    int executionType = 0;
+    char* inputCmd = (char*)malloc(sizeof(char) * STRCMD);
+    char** cmdParsed = (char**)malloc(sizeof(char*) * MAXCMD);
+    char** cmdPiped = (char**)malloc(sizeof(char*) * MAXCMD);
+    bool isRunning = TRUE;
     txt_init_shell();
     
     while(isRunning){
         printWorkingDirectory();
-        if (waitInputUser(inputCmd)) {
+        if(waitInputUser(inputCmd))
             continue;
-        }
+        
+        printf("cmdManager: %d", processCommand(inputCmd, cmdParsed, cmdPiped));
 
-        isRunning = FALSE;
+        
         
     }
     
