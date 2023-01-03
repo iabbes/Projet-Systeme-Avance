@@ -6,6 +6,7 @@
 #include "utils.h"
 #include "process.h"
 
+
 #define STRCMD 30 
 
 int main(int argc, char const *argv[])
@@ -22,9 +23,9 @@ int main(int argc, char const *argv[])
         if(waitInputUser(inputCmd))
             continue;
         
-        printf("cmdManager: %d", processCommand(inputCmd, cmdParsed, cmdPiped));
+        printf("\n\ncmdManager: %d\n", processCommand(inputCmd, cmdParsed, cmdPiped));
 
-        
+        isRunning = FALSE;
         
     }
     

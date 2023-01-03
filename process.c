@@ -1,4 +1,5 @@
 #include "process.h"
+
 /**
  * @brief find pipe in command
  * @param cmd command
@@ -9,7 +10,7 @@ int findPipe(char* cmd, char** cmdPiped){
     int i = 0;
     while(i <= 3){
         cmdPiped[i] = strsep(&cmd, "|");
-        if(cmd[i] == NULL){
+        if(cmdPiped[i] == NULL){
             break;
         }
         i++;
@@ -67,7 +68,11 @@ int cmdManager(char** cmdParsed)
 {
     int nbCmd = 3;
     int value = 0;
-    char* listCmd[nbCmd] = {"cd", "exit", "help"};
+    char* listCmd[nbCmd];
+    listCmd[0] = "cd";
+    listCmd[1] = "exit";
+    listCmd[2] = "help";
+
 
     int i = 0;
     while(i < nbCmd){
