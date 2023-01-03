@@ -7,7 +7,7 @@ FLAGS	 = -Wno-implicit-function-declaration -g -c -Wall
 LFLAGS	 = 
 
 all: $(OBJS)
-	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+	$(CC) -g -lreadline $(OBJS) -o $(OUT) $(LFLAGS)
 
 main.o: main.c
 	$(CC) $(FLAGS) main.c -std=c17
