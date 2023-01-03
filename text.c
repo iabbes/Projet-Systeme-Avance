@@ -2,21 +2,20 @@
 
 void txt_init_shell(){
     puts("\n\n\n\n **********************************"
-    "\n\n\nBienvenue dans le shell de Victor, Ökkes et Ines !"
+    "\n\n\nWelcome to Victor, Ökkes et Ines' Shell!"
     "\n\n\n **********************************");
 }
 
 void txt_help(){
     puts("******* SHELL HELP *******"
-    "\nVoici la liste des commandes disponibles :"
+    "\nHere are a list of commands that can be used in our Shell :"
     "\n> cd"
     "\n> ls"
     "\n> exit"
-    "\n> toutes les commandes disponibles dans le shell UNIX"
-    "\n> pipe est pris en charge"
-    "\n> les espaces sont pris en charge");
+    "\n> every other general command available in UNIX shell"
+    "\n> pipe handling");
 }
 
 void txt_exit(){
-    puts("\nAu revoir !\n");
+    puts("\nBye !\n");
 }

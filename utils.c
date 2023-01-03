@@ -1,6 +1,6 @@
 #include "utils.h"
 
-void raler(char *msg)
+void complain(char *msg)
 {
     perror(msg);
     exit(1);
