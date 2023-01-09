@@ -3,12 +3,32 @@
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
-#include "text.h"
+#include "utils.h"
+#include "process.h"
+
+
+#define STRCMD 30 
 
 int main(int argc, char const *argv[])
 {
+    int executionType = 0;
+    char* inputCmd = (char*)malloc(sizeof(char) * STRCMD);
+    char** cmdParsed = (char**)malloc(sizeof(char*) * MAXCMD);
+    char** cmdPiped = (char**)malloc(sizeof(char*) * MAXCMD);
+    bool isRunning = TRUE;
     txt_init_shell();
-    txt_help();
-    txt_exit();
+    
+    while(isRunning){
+        printWorkingDirectory();
+        if(waitInputUser(inputCmd))
+            continue;
+        
+        printf("\n\ncmdManager: %d\n", processCommand(inputCmd, cmdParsed, cmdPiped));
+
+        isRunning = FALSE;
+        
+    }
+    
+
     return 0;
 }
