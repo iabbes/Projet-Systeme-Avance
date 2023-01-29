@@ -11,6 +11,7 @@
 #include <readline/history.h>
 #include "text.h"
 #include "process.h"
+#include "history.h"
 
 #define MAXCMD 10
 
