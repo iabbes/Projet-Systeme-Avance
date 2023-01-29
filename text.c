@@ -1,11 +1,21 @@
 #include "text.h"
 
+/**
+ * @brief      Prints welcome message.
+ * @param      None
+ * @return     None
+*/
 void txt_init_shell(){
     puts("\n\n\n\n **********************************"
     "\n\n\nWelcome to Victor, Ökkes et Ines' Shell!"
     "\n\n\n **********************************");
 }
 
+/**
+ * @brief      Prints help message with available commands in our Shell.
+ * @param      None
+ * @return     None
+*/
 void txt_help(){
     puts("******* SHELL HELP *******"
     "\nHere are a list of commands that can be used in our Shell :"
@@ -16,6 +26,11 @@ void txt_help(){
     "\n> pipe handling");
 }
 
+/**
+ * @brief      Prints exit message.
+ * @param      None
+ * @return     None
+*/
 void txt_exit(){
     puts("\nBye !\n");
 }
