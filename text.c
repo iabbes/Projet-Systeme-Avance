@@ -7,7 +7,7 @@
 */
 void txt_init_shell(){
     puts("\n\n\n\n **********************************"
-    "\n\n\nWelcome to Victor, Ökkes et Ines' Shell!"
+    "\n\n\nWelcome to Victor, Ökkes and Ines's Shell!"
     "\n\n\n **********************************");
 }
 
