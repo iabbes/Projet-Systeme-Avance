@@ -22,11 +22,16 @@ int main(int argc, char const *argv[])
         printWorkingDirectory();
         if(waitInputUser(inputCmd))
             continue;
-        
-        printf("\n\ncmdManager: %d\n", processCommand(inputCmd, cmdParsed, cmdPiped));
 
-        isRunning = FALSE;
-        
+        executionType = processCommand(inputCmd, cmdParsed, cmdPiped);
+
+        if(executionType == 1){
+            processArguments(cmdParsed);
+        }
+        if (executionType == 2)
+            processArgumentsPipe(cmdParsed, cmdPiped);
+
+        //isRunning = FALSE;
     }
     
 
