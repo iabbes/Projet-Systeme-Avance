@@ -1,6 +1,8 @@
 #ifndef HISTORY_H
 #define HISTORY_H
 
+#include <time.h>
+
 /**
  * @brief Logs a command to a history file
  *
@@ -12,5 +14,7 @@
  * @param command The command to be logged
  */
 void log_command(char* filename, char* command);
+
+void log_history(const char *cmd);
 
 #endif

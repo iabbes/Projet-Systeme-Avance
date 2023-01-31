@@ -35,7 +35,8 @@ int main(int argc, char const *argv[])
         //isRunning = FALSE;
 
         // Log command to history file
-        log_command(HISTORY_FILE, inputCmd);
+        //log_command(HISTORY_FILE, inputCmd);
+        log_history(inputCmd);
     }
     
 
