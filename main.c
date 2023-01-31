@@ -8,7 +8,6 @@
 
 
 #define STRCMD 30 
-#define HISTORY_FILE "history.log"
 
 int main(int argc, char const *argv[])
 {
@@ -33,10 +32,6 @@ int main(int argc, char const *argv[])
             processArgumentsPipe(cmdParsed, cmdPiped);
 
         //isRunning = FALSE;
-
-        // Log command to history file
-        //log_command(HISTORY_FILE, inputCmd);
-        log_history(inputCmd);
     }
     
 
