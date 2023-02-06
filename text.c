@@ -1,4 +1,4 @@
-#include "../headers/text.h"
+#include "text.h"
 
 /**
  * @brief      Prints welcome message.

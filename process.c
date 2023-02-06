@@ -1,4 +1,4 @@
-#include "../headers/process.h"
+#include "process.h"
 
 /**
  * @brief find pipe in command
