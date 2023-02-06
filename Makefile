@@ -1,6 +1,6 @@
-OBJS	= main.o utils.o text.o process.o
-SOURCE	= main.c utils.c text.c process.c
-HEADER	= utils.h text.h
+OBJS	= main.o utils.o text.o process.o history.o
+SOURCE	= main.c utils.c text.c process.c history.c
+HEADER	= utils.h text.h process.h history.h
 OUT	= shell-project
 CC	 = gcc
 FLAGS	 = -Wno-implicit-function-declaration -g -c -Wall
@@ -20,6 +20,9 @@ text.o: text.c
 
 process.o: process.c
 	$(CC) $(FLAGS) process.c -std=c17
+
+history.o: history.c
+	$(CC) $(FLAGS) history.c -std=c17
 
 clean:
 	rm -f $(OBJS) $(OUT)

@@ -1,4 +1,5 @@
 #include "utils.h"
+#include "history.h"
 
 /**
  * @brief      Print an error message and exit the program
@@ -36,6 +37,7 @@ int waitInputUser(char* cmd)
     char* buf;
     buf = readline("\n > ");
     if (strlen(buf) != 0) {
+        log_history(buf);
         add_history(buf);
         strcpy(cmd, buf);
         return 0;
