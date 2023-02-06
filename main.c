@@ -6,34 +6,42 @@
 #include "utils.h"
 #include "process.h"
 
-
-#define STRCMD 30 
+#define STRCMD 30
 
 int main(int argc, char const *argv[])
 {
     int executionType = 0;
-    char* inputCmd = (char*)malloc(sizeof(char) * STRCMD);
-    char** cmdParsed = (char**)malloc(sizeof(char*) * MAXCMD);
-    char** cmdPiped = (char**)malloc(sizeof(char*) * MAXCMD);
+    char *inputCmd = (char *)malloc(sizeof(char) * STRCMD);
+    char **cmdParsed = (char **)malloc(sizeof(char *) * MAXCMD);
+    char **cmdPiped = (char **)malloc(sizeof(char *) * MAXCMD);
+    char *alias = (char *)malloc(sizeof(char) * MAXCMD);
     bool isRunning = TRUE;
     txt_init_shell();
-    
-    while(isRunning){
+
+    add_alias("ll", "ls -al");
+    add_alias("hi", "echo \"hello project\"");
+
+    while (isRunning)
+    {
         printWorkingDirectory();
-        if(waitInputUser(inputCmd))
+        if (waitInputUser(inputCmd))
             continue;
 
         executionType = processCommand(inputCmd, cmdParsed, cmdPiped);
+        alias = get_alias(inputCmd);
 
-        if(executionType == 1){
-            processArguments(cmdParsed);
+        if (alias != NULL)
+        {
+            system(alias);
         }
-        if (executionType == 2)
+        else if (executionType == 1)
+        {
+            processArguments(cmdParsed);
+        } else if (executionType == 2)
             processArgumentsPipe(cmdParsed, cmdPiped);
 
-        //isRunning = FALSE;
+        // isRunning = FALSE;
     }
-    
 
     return 0;
 }
