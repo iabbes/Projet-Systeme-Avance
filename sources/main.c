@@ -20,6 +20,10 @@ int main(int argc, char const *argv[])
     char* inputCmdBatch = (char*)malloc(sizeof(char) * STRCMD);
     int batchmode = false;
 
+    char *alias = (char *)malloc(sizeof(char) * MAXCMD);
+    add_alias("ll", "ls -al");
+    add_alias("hi", "echo \"hello project\"");
+
     //check if batch mode
     if (argc >= 2){
         batchmode = true;
@@ -55,12 +59,22 @@ int main(int argc, char const *argv[])
             continue;
 
         executionType = processCommand(inputCmd, cmdParsed, cmdPiped);
+        alias = get_alias(inputCmd);
 
-        if(executionType == 1){
-            processArguments(cmdParsed);
+        if (alias != NULL)
+        {
+            system(alias);
         }
-        if (executionType == 2)
+        else if(strcmp(cmdParsed[0], "alias") == 0 && argc == 1)
+        {
+            manage_alias();
+        }
+        else if (executionType == 1)
+        {
+            processArguments(cmdParsed);
+        } else if (executionType == 2) {
             processArgumentsPipe(cmdParsed, cmdPiped);
+        }
     }
     
 
