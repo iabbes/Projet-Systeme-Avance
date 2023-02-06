@@ -15,6 +15,7 @@ int main(int argc, char const *argv[])
     char **cmdParsed = (char **)malloc(sizeof(char *) * MAXCMD);
     char **cmdPiped = (char **)malloc(sizeof(char *) * MAXCMD);
     char *alias = (char *)malloc(sizeof(char) * MAXCMD);
+    char completeCmd[STRCMD];
     bool isRunning = TRUE;
     txt_init_shell();
 
@@ -27,12 +28,21 @@ int main(int argc, char const *argv[])
         if (waitInputUser(inputCmd))
             continue;
 
+        // store inputCmd to completeCmd
+        strcpy(completeCmd, inputCmd);
+
         executionType = processCommand(inputCmd, cmdParsed, cmdPiped);
         alias = get_alias(inputCmd);
+
+
 
         if (alias != NULL)
         {
             system(alias);
+        }
+        else if(strcmp(cmdParsed[0], "alias") == 0 && argc == 1)
+        {
+            manage_alias();
         }
         else if (executionType == 1)
         {

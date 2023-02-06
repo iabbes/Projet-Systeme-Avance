@@ -29,5 +29,5 @@ void printWorkingDirectory();
 int waitInputUser(char* cmd);
 void add_alias(char* command, char* alias);
 char* get_alias(char* command);
-
+void manage_alias();
 #endif

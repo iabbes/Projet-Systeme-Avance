@@ -84,4 +84,33 @@ void printAliases()
     {
         printf("%s -> %s \n", aliases[i].alias, aliases[i].command);
     }
+    printf("---------------\n");
+}
+
+// wait input of alias then command and store the alias
+void manage_alias()
+{
+    char aliasInput[MAXCMD];
+    char commandInput[MAXCMD];
+    printf("Enter alias: ");
+    scanf("%s", aliasInput);
+    // if aliasInput is empty, return
+    if (strlen(aliasInput) == 0)
+    {
+        printf("Alias cannot be empty");
+        return;
+    }
+
+    getchar(); // clear buffer
+    
+    printf("Enter command: ");
+    scanf("%[^\n]", commandInput);
+    if (strlen(commandInput) == 0)
+    {
+        printf("Command cannot be empty");
+        return;
+    }
+    add_alias(aliasInput, commandInput);
+    printf("Alias added successfully! \n List of aliases: \n");
+    printAliases();
 }
