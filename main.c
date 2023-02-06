@@ -24,12 +24,16 @@ int main(int argc, char const *argv[])
             continue;
 
         executionType = processCommand(inputCmd, cmdParsed, cmdPiped);
+        printf("executionType: %d\n", executionType);
 
-        if(executionType == 1){
+        if(executionType == 1)
             processArguments(cmdParsed);
-        }
         if (executionType == 2)
+            processArgumentsBackground(cmdParsed);
+        if (executionType == 3)
             processArgumentsPipe(cmdParsed, cmdPiped);
+        if (executionType == 4)
+            processArgumentsRedirection(cmdParsed, cmdPiped);
 
         //isRunning = FALSE;
     }
