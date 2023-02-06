@@ -17,6 +17,8 @@ int main(int argc, char const *argv[])
     char** cmdPiped = (char**)malloc(sizeof(char*) * MAXCMD);
     bool isRunning = TRUE;
 
+    char* rootPath = getcwd(NULL, 0);
+
     char* inputCmdBatch = (char*)malloc(sizeof(char) * STRCMD);
     int batchmode = false;
 
@@ -34,7 +36,7 @@ int main(int argc, char const *argv[])
     //if batch mode
     while(batchmode){
         
-        log_history(inputCmdBatch);
+        log_history(inputCmdBatch, rootPath);
         add_history(inputCmdBatch);
 
         executionType = processCommand(inputCmdBatch, cmdParsed, cmdPiped);
@@ -51,7 +53,7 @@ int main(int argc, char const *argv[])
     
     while(isRunning){
         printWorkingDirectory();
-        if(waitInputUser(inputCmd))
+        if(waitInputUser(inputCmd, rootPath))
             continue;
 
         executionType = processCommand(inputCmd, cmdParsed, cmdPiped);
