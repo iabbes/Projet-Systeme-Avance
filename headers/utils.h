@@ -17,6 +17,6 @@
 
 void complain (char* msg);
 void printWorkingDirectory();
-int waitInputUser(char* cmd);
+int waitInputUser(char* cmd, char *path);
 
 #endif
