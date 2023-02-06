@@ -2,23 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "history.h"
+#include "../headers/history.h"
 
-void log_command(char* filename, char* command) {
-  FILE* file = fopen(filename, "a");
-  if (file == NULL) {
-    perror("Error opening history file");
-    return;
-  }
-
-  // Append the command to the file
-  fprintf(file, "%s\n", command);
-  fclose(file);
-}
-
-void log_history(const char *cmd)
+ 
+void log_history(const char *cmd, char *path)
 {
-    FILE *fp = fopen("history.log", "a");
+    char path_copy[strlen(path) + 1];
+    strcpy(path_copy, path);
+
+    FILE *fp = fopen(strcat(path_copy,"/history.log"), "a");
     if (fp == NULL) {
         perror("Error opening file");
         return;

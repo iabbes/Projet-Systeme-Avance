@@ -1,5 +1,5 @@
-#include "utils.h"
-#include "history.h"
+#include "../headers/utils.h"
+#include "../headers/history.h"
 
 /**
  * @brief      Print an error message and exit the program
@@ -32,12 +32,12 @@ void printWorkingDirectory(){
  * @param      cmd   The command
  * @return     0 if the user has entered a command, 1 otherwise
 */
-int waitInputUser(char* cmd)
+int waitInputUser(char* cmd, char* path)
 {
     char* buf;
     buf = readline("\n > ");
     if (strlen(buf) != 0) {
-        log_history(buf);
+        log_history(buf, path);
         add_history(buf);
         strcpy(cmd, buf);
         return 0;
