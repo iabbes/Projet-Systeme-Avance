@@ -3,8 +3,8 @@
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
-#include "utils.h"
-#include "process.h"
+#include "../headers/utils.h"
+#include "../headers/process.h"
 
 
 #define STRCMD 30 
@@ -16,6 +16,37 @@ int main(int argc, char const *argv[])
     char** cmdParsed = (char**)malloc(sizeof(char*) * MAXCMD);
     char** cmdPiped = (char**)malloc(sizeof(char*) * MAXCMD);
     bool isRunning = TRUE;
+
+    char* inputCmdBatch = (char*)malloc(sizeof(char) * STRCMD);
+    int batchmode = false;
+
+    //check if batch mode
+    if (argc >= 2){
+        batchmode = true;
+    }
+
+    //concatenate all arguments
+    for (int i = 1; i < argc; i++){
+        strcat(inputCmdBatch, argv[i]);
+        strcat(inputCmdBatch, " ");
+    }
+
+    //if batch mode
+    while(batchmode){
+        
+        log_history(inputCmdBatch);
+        add_history(inputCmdBatch);
+
+        executionType = processCommand(inputCmdBatch, cmdParsed, cmdPiped);
+
+        if(executionType == 1){
+            processArguments(cmdParsed);
+        }
+        if (executionType == 2)
+            processArgumentsPipe(cmdParsed, cmdPiped);
+        return(EXIT_SUCCESS);
+    }
+    
     txt_init_shell();
     
     while(isRunning){
@@ -30,8 +61,6 @@ int main(int argc, char const *argv[])
         }
         if (executionType == 2)
             processArgumentsPipe(cmdParsed, cmdPiped);
-
-        //isRunning = FALSE;
     }
     
 
