@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "history.h"
+#include "../headers/history.h"
 
  
 //ajouter un param chemin absolue 

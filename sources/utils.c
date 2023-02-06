@@ -1,5 +1,5 @@
-#include "utils.h"
-#include "history.h"
+#include "../headers/utils.h"
+#include "../headers/history.h"
 
 /**
  * @brief      Print an error message and exit the program

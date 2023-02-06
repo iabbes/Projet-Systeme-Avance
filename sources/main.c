@@ -3,8 +3,8 @@
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
-#include "utils.h"
-#include "process.h"
+#include "../headers/utils.h"
+#include "../headers/process.h"
 
 
 #define STRCMD 30 
