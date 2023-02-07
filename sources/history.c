@@ -4,7 +4,12 @@
 
 #include "../headers/history.h"
 
- 
+/**
+ * @brief writes the command to the history file
+ * @param cmd the command to write
+ * @param path the path to the directory where is the history file
+ * @return void
+ */ 
 void log_history(const char *cmd, char *path)
 {
     char path_copy[strlen(path) + 1];
