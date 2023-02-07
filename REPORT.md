@@ -35,6 +35,11 @@ Voici les exigences techniques tenues :
 
 ## Fonctionnement du mini-shell
 
+- make all : compilation du projet
+- make run : lancement du mini shell
+- ./shell-project <cmd> : lancement du mini shell en mode batch
+- make clean : supprime tous les fichiers.o
+
 ## Difficultés rencontrées
 
 Nous avons rencontré des difficultés lors du développement de certaines fonctionnalités telles que : 
