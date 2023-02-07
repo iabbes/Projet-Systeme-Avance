@@ -1,4 +1,4 @@
-*Auteurs : NOMS A INDIQUER*
+*Auteurs : Abbes Ines, Amoca Okkes, Larmet Victor*
 
 # Compte rendu - Projet-Systeme-Avance
 
