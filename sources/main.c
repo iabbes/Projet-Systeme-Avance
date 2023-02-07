@@ -45,11 +45,14 @@ int main(int argc, char const *argv[])
 
         executionType = processCommand(inputCmdBatch, cmdParsed, cmdPiped);
 
-        if(executionType == 1){
+        if(executionType == 1)
             processArguments(cmdParsed);
-        }
-        if (executionType == 2)
+        else if (executionType == 2)
+            processArgumentsBackground(cmdParsed);
+        else if (executionType == 3)
             processArgumentsPipe(cmdParsed, cmdPiped);
+        else if (executionType == 4)
+            processArgumentsRedirection(cmdParsed, cmdPiped);
         return(EXIT_SUCCESS);
     }
     
@@ -71,12 +74,14 @@ int main(int argc, char const *argv[])
         {
             manage_alias();
         }
-        else if (executionType == 1)
-        {
+        else if(executionType == 1)
             processArguments(cmdParsed);
-        } else if (executionType == 2) {
+        else if (executionType == 2)
+            processArgumentsBackground(cmdParsed);
+        else if (executionType == 3)
             processArgumentsPipe(cmdParsed, cmdPiped);
-        }
+        else if (executionType == 4)
+            processArgumentsRedirection(cmdParsed, cmdPiped);
     }
     
 
