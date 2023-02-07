@@ -1,7 +1,17 @@
 #include "../headers/typedef.h"
 #include "../headers/utils.h"
 
-//init struct command 
+/** 
+ * @file typedef.c
+ * @brief This file contains all the functions used to free and malloc data
+ */
+
+
+/**
+ * @brief malloc struct command
+ * @param None
+ * @return Command* 
+ */
 Command* init_command(){
     Command* cmd = (Command*)malloc(sizeof(Command));
     cmd->argc = (int*)malloc(sizeof(int));
@@ -9,26 +19,12 @@ Command* init_command(){
     return cmd;
 }
 
-//set struct command
-/*void set_command(Command* cmd, char* inputCmd){
-    int i = 0;
-    while (i < MAXCMD)
-    {
-        cmd->argv[i] = strsep(&inputCmd, " ");
-        if (cmd->argv[i] == NULL)
-        {
-            break;
-        }
-        if (strlen(cmd->argv[i]) == 0)
-        {
-            i--;
-        }
-        i++;
-    }
-    cmd->argc = &i;
-} */
 
-//free struct command
+/**
+ * @brief free struct command
+ * @param cmd Command*
+ * @return None
+ */
 void free_command(Command* cmd){
     free(cmd->argc);
     free(cmd->argv);

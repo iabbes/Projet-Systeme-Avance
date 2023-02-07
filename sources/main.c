@@ -7,19 +7,29 @@
 #include "../headers/process.h"
 
 
-#define STRCMD 30 
+/** 
+ * @file main.c
+ * @brief This file contains the main function of the shell 
+ */
 
+
+/**
+ * @brief main function of the shell
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char const *argv[])
 {
     int executionType = 0;
-    char* inputCmd = (char*)malloc(sizeof(char) * STRCMD);
+    char* inputCmd = (char*)malloc(sizeof(char) * MAXCMD);
     char** cmdParsed = (char**)malloc(sizeof(char*) * MAXCMD);
     char** cmdPiped = (char**)malloc(sizeof(char*) * MAXCMD);
     bool isRunning = TRUE;
 
     char* rootPath = getcwd(NULL, 0);
 
-    char* inputCmdBatch = (char*)malloc(sizeof(char) * STRCMD);
+    char* inputCmdBatch = (char*)malloc(sizeof(char) * MAXCMD);
     int batchmode = false;
 
     char *alias = (char *)malloc(sizeof(char) * MAXCMD);

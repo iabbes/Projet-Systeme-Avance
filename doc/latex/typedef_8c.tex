@@ -1,0 +1,67 @@
+\hypertarget{typedef_8c}{}\doxysection{/mnt/c/\+Users/victo/\+Desktop/\+Dossier perso/\+CNAM/2\+A/\+Systeme avancee/\+Projet final/\+Projet-\/\+Systeme-\/\+Avance/sources/typedef.c File Reference}
+\label{typedef_8c}\index{/mnt/c/Users/victo/Desktop/Dossier perso/CNAM/2A/Systeme avancee/Projet final/Projet-\/Systeme-\/Avance/sources/typedef.c@{/mnt/c/Users/victo/Desktop/Dossier perso/CNAM/2A/Systeme avancee/Projet final/Projet-\/Systeme-\/Avance/sources/typedef.c}}
+
+
+This file contains all the functions used to free and malloc data.  
+
+
+{\ttfamily \#include \char`\"{}../headers/typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../headers/utils.\+h\char`\"{}}\newline
+Include dependency graph for typedef.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typedef_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcommand}{Command}} $\ast$ \mbox{\hyperlink{typedef_8c_a2c828325bc2249bdfc37fccc1169ee33}{init\+\_\+command}} ()
+\begin{DoxyCompactList}\small\item\em malloc struct command \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typedef_8c_a112a3b91bd49d00b07855827655aaa9b}{free\+\_\+command}} (\mbox{\hyperlink{structcommand}{Command}} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em free struct command \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions used to free and malloc data. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{typedef_8c_a112a3b91bd49d00b07855827655aaa9b}\label{typedef_8c_a112a3b91bd49d00b07855827655aaa9b}} 
+\index{typedef.c@{typedef.c}!free\_command@{free\_command}}
+\index{free\_command@{free\_command}!typedef.c@{typedef.c}}
+\doxysubsubsection{\texorpdfstring{free\_command()}{free\_command()}}
+{\footnotesize\ttfamily void free\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcommand}{Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+free struct command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Command$\ast$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{typedef_8c_a2c828325bc2249bdfc37fccc1169ee33}\label{typedef_8c_a2c828325bc2249bdfc37fccc1169ee33}} 
+\index{typedef.c@{typedef.c}!init\_command@{init\_command}}
+\index{init\_command@{init\_command}!typedef.c@{typedef.c}}
+\doxysubsubsection{\texorpdfstring{init\_command()}{init\_command()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcommand}{Command}}$\ast$ init\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+malloc struct command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Command$\ast$ 
+\end{DoxyReturn}

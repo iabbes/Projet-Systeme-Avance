@@ -1,6 +1,12 @@
 #include "../headers/utils.h"
 #include "../headers/history.h"
 
+/** 
+ * @file utils.c
+ * @brief This file contains all the utility functions used in the shell
+ */
+
+
 /**
  * @brief      Print an error message and exit the program
  * @param      msg   The message
@@ -34,6 +40,7 @@ void printWorkingDirectory()
 /**
  * @brief      Wait an input of the user and store it in history
  * @param      cmd   The command
+ * @param      path  The path
  * @return     0 if the user has entered a command, 1 otherwise
 */
 int waitInputUser(char* cmd, char* path)
@@ -52,9 +59,23 @@ int waitInputUser(char* cmd, char* path)
     }
 }
 
+
+/**
+ * @brief Initialize the aliases
+ */
 struct alias aliases[MAX_ALIASES];
+
+/**
+ * @brief     Number of aliases
+ */
 int num_aliases = 0;
 
+/**
+ * @brief      Add an alias
+ * @param      command  The command
+ * @param      alias    The alias
+ * @return     None
+ */
 void add_alias(char *command, char *alias)
 {
     strcpy(aliases[num_aliases].command, command);
@@ -62,6 +83,11 @@ void add_alias(char *command, char *alias)
     num_aliases++;
 }
 
+/**
+ * @brief      Get the alias of a command
+ * @param      command  The command
+ * @return     The alias
+ */
 char *get_alias(char *command)
 {
 
@@ -76,6 +102,11 @@ char *get_alias(char *command)
     return NULL;
 }
 
+/**
+ * @brief     Print all the aliases
+ * @param     None
+ * @return    None
+ */
 void printAliases()
 {
     int i;
@@ -87,6 +118,11 @@ void printAliases()
 }
 
 // wait input of alias then command and store the alias
+/**
+* @brief      Manage and check the input of the user to create an alias
+* @param      None
+* @return     None
+*/
 void manage_alias()
 {
     char aliasInput[MAXCMD];

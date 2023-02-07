@@ -1,0 +1,180 @@
+\hypertarget{utils_8c}{}\doxysection{/mnt/c/\+Users/victo/\+Desktop/\+Dossier perso/\+CNAM/2\+A/\+Systeme avancee/\+Projet final/\+Projet-\/\+Systeme-\/\+Avance/sources/utils.c File Reference}
+\label{utils_8c}\index{/mnt/c/Users/victo/Desktop/Dossier perso/CNAM/2A/Systeme avancee/Projet final/Projet-\/Systeme-\/Avance/sources/utils.c@{/mnt/c/Users/victo/Desktop/Dossier perso/CNAM/2A/Systeme avancee/Projet final/Projet-\/Systeme-\/Avance/sources/utils.c}}
+
+
+This file contains all the utility functions used in the shell.  
+
+
+{\ttfamily \#include \char`\"{}../headers/utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../headers/history.\+h\char`\"{}}\newline
+Include dependency graph for utils.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{utils_8c_a12100bc79f37d8bcf1296765d771f487}{complain}} (char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Print an error message and exit the program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_ad921c9e286df9b53e88252926489e03e}{print\+Working\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Print the current working directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8c_a6c5d0a38e73c21eea38d3b3e7febf741}{wait\+Input\+User}} (char $\ast$cmd, char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Wait an input of the user and store it in history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_ad2c507847ce55f3624feb94dbf582328}{add\+\_\+alias}} (char $\ast$\mbox{\hyperlink{structcommand}{command}}, char $\ast$\mbox{\hyperlink{structalias}{alias}})
+\begin{DoxyCompactList}\small\item\em Add an alias. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{utils_8c_afbbd5cfc48b59c976fe31809f81cf5fa}{get\+\_\+alias}} (char $\ast$\mbox{\hyperlink{structcommand}{command}})
+\begin{DoxyCompactList}\small\item\em Get the alias of a command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_a54efaf5d5e107f6410f25331c454ef38}{print\+Aliases}} ()
+\begin{DoxyCompactList}\small\item\em Print all the aliases. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_a0595c86aaa36f8b99c251ccebf383bdf}{manage\+\_\+alias}} ()
+\begin{DoxyCompactList}\small\item\em Manage and check the input of the user to create an alias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{utils_8c_abbfa97bd9e12dcadf067eb5544518cdd}\label{utils_8c_abbfa97bd9e12dcadf067eb5544518cdd}} 
+struct \mbox{\hyperlink{structalias}{alias}} \mbox{\hyperlink{utils_8c_abbfa97bd9e12dcadf067eb5544518cdd}{aliases}} \mbox{[}MAX\+\_\+\+ALIASES\mbox{]}
+\begin{DoxyCompactList}\small\item\em Initialize the aliases. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_8c_a44cae2c5e88b0844600e1aaa76688e95}\label{utils_8c_a44cae2c5e88b0844600e1aaa76688e95}} 
+int \mbox{\hyperlink{utils_8c_a44cae2c5e88b0844600e1aaa76688e95}{num\+\_\+aliases}} = 0
+\begin{DoxyCompactList}\small\item\em Number of aliases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the utility functions used in the shell. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8c_ad2c507847ce55f3624feb94dbf582328}\label{utils_8c_ad2c507847ce55f3624feb94dbf582328}} 
+\index{utils.c@{utils.c}!add\_alias@{add\_alias}}
+\index{add\_alias@{add\_alias}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{add\_alias()}{add\_alias()}}
+{\footnotesize\ttfamily void add\+\_\+alias (\begin{DoxyParamCaption}\item[{char $\ast$}]{command,  }\item[{char $\ast$}]{alias }\end{DoxyParamCaption})}
+
+
+
+Add an alias. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command \\
+\hline
+{\em alias} & The alias \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_a12100bc79f37d8bcf1296765d771f487}\label{utils_8c_a12100bc79f37d8bcf1296765d771f487}} 
+\index{utils.c@{utils.c}!complain@{complain}}
+\index{complain@{complain}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{complain()}{complain()}}
+{\footnotesize\ttfamily void complain (\begin{DoxyParamCaption}\item[{char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Print an error message and exit the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_afbbd5cfc48b59c976fe31809f81cf5fa}\label{utils_8c_afbbd5cfc48b59c976fe31809f81cf5fa}} 
+\index{utils.c@{utils.c}!get\_alias@{get\_alias}}
+\index{get\_alias@{get\_alias}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{get\_alias()}{get\_alias()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+alias (\begin{DoxyParamCaption}\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Get the alias of a command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The alias 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_a0595c86aaa36f8b99c251ccebf383bdf}\label{utils_8c_a0595c86aaa36f8b99c251ccebf383bdf}} 
+\index{utils.c@{utils.c}!manage\_alias@{manage\_alias}}
+\index{manage\_alias@{manage\_alias}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{manage\_alias()}{manage\_alias()}}
+{\footnotesize\ttfamily void manage\+\_\+alias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Manage and check the input of the user to create an alias. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_a54efaf5d5e107f6410f25331c454ef38}\label{utils_8c_a54efaf5d5e107f6410f25331c454ef38}} 
+\index{utils.c@{utils.c}!printAliases@{printAliases}}
+\index{printAliases@{printAliases}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{printAliases()}{printAliases()}}
+{\footnotesize\ttfamily void print\+Aliases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print all the aliases. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_ad921c9e286df9b53e88252926489e03e}\label{utils_8c_ad921c9e286df9b53e88252926489e03e}} 
+\index{utils.c@{utils.c}!printWorkingDirectory@{printWorkingDirectory}}
+\index{printWorkingDirectory@{printWorkingDirectory}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{printWorkingDirectory()}{printWorkingDirectory()}}
+{\footnotesize\ttfamily void print\+Working\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the current working directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_a6c5d0a38e73c21eea38d3b3e7febf741}\label{utils_8c_a6c5d0a38e73c21eea38d3b3e7febf741}} 
+\index{utils.c@{utils.c}!waitInputUser@{waitInputUser}}
+\index{waitInputUser@{waitInputUser}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{waitInputUser()}{waitInputUser()}}
+{\footnotesize\ttfamily int wait\+Input\+User (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd,  }\item[{char $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Wait an input of the user and store it in history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & The command \\
+\hline
+{\em path} & The path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the user has entered a command, 1 otherwise 
+\end{DoxyReturn}

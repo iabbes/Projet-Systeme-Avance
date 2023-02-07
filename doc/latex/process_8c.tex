@@ -1,0 +1,264 @@
+\hypertarget{process_8c}{}\doxysection{/mnt/c/\+Users/victo/\+Desktop/\+Dossier perso/\+CNAM/2\+A/\+Systeme avancee/\+Projet final/\+Projet-\/\+Systeme-\/\+Avance/sources/process.c File Reference}
+\label{process_8c}\index{/mnt/c/Users/victo/Desktop/Dossier perso/CNAM/2A/Systeme avancee/Projet final/Projet-\/Systeme-\/Avance/sources/process.c@{/mnt/c/Users/victo/Desktop/Dossier perso/CNAM/2A/Systeme avancee/Projet final/Projet-\/Systeme-\/Avance/sources/process.c}}
+
+
+This file contains all the functions used to process the command.  
+
+
+{\ttfamily \#include \char`\"{}../headers/process.\+h\char`\"{}}\newline
+Include dependency graph for process.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{process_8c_a0103a0bf809d78c58cf23a173e038a65}{find\+Pipe}} (char $\ast$cmd, char $\ast$$\ast$cmd\+Piped)
+\begin{DoxyCompactList}\small\item\em find pipe in command \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8c_ad9feca787a350e64becffcc9b91ab939}{find\+Epsilone}} (char $\ast$cmd, char $\ast$$\ast$cmd\+Parsed)
+\begin{DoxyCompactList}\small\item\em find epsilone in command \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8c_a735e3d106ba7acc42fa97bd0a7d1d50e}{find\+Redirection}} (char $\ast$cmd, char $\ast$$\ast$cmd\+Parsed)
+\begin{DoxyCompactList}\small\item\em find redirection in command \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_a61579380f5d78ee84dc7aca8c3a3dc37}{find\+Space}} (char $\ast$cmd, char $\ast$$\ast$cmd\+Parsed)
+\begin{DoxyCompactList}\small\item\em find space in command \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8c_a9e5d97c7defafdd3d131e82ba27e8531}{process\+Command}} (char $\ast$cmd, char $\ast$$\ast$cmd\+Parsed, char $\ast$$\ast$cmd\+Piped)
+\begin{DoxyCompactList}\small\item\em process command \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8c_a4866dedd25f6fe4af86fc1899efc1755}{cmd\+Manager}} (char $\ast$$\ast$cmd\+Parsed)
+\begin{DoxyCompactList}\small\item\em function which handle our commands \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_aa760fca0639886fe9964e0dd382e8278}{process\+Arguments}} (char $\ast$$\ast$parsed)
+\begin{DoxyCompactList}\small\item\em function which handle our commands \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_aedc5216445be48f247095bf150a226b6}{process\+Arguments\+Pipe}} (char $\ast$$\ast$parsed, char $\ast$$\ast$parsedpipe)
+\begin{DoxyCompactList}\small\item\em function which handle our commands \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_a4eaf734b6d65dab73139a01fe39c47ae}{process\+Arguments\+Redirection}} (char $\ast$$\ast$parsed\+Cmd, char $\ast$$\ast$parsed\+File)
+\begin{DoxyCompactList}\small\item\em function which handle our commands \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_af656f1c8fb6ea747ccbc4d7b9307c875}{process\+Arguments\+Background}} (char $\ast$$\ast$parsed)
+\begin{DoxyCompactList}\small\item\em function which handle our commands \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{process_8c_a93c766c6e86f4f79e7507c21f1794e15}{strsep}} (char $\ast$$\ast$stringp, const char $\ast$delim)
+\begin{DoxyCompactList}\small\item\em function which handle our commands \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions used to process the command. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{process_8c_a4866dedd25f6fe4af86fc1899efc1755}\label{process_8c_a4866dedd25f6fe4af86fc1899efc1755}} 
+\index{process.c@{process.c}!cmdManager@{cmdManager}}
+\index{cmdManager@{cmdManager}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{cmdManager()}{cmdManager()}}
+{\footnotesize\ttfamily int cmd\+Manager (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{cmd\+Parsed }\end{DoxyParamCaption})}
+
+
+
+function which handle our commands 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\+Parsed} & command parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if we don\textquotesingle{}t have a command, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_ad9feca787a350e64becffcc9b91ab939}\label{process_8c_ad9feca787a350e64becffcc9b91ab939}} 
+\index{process.c@{process.c}!findEpsilone@{findEpsilone}}
+\index{findEpsilone@{findEpsilone}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{findEpsilone()}{findEpsilone()}}
+{\footnotesize\ttfamily int find\+Epsilone (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd,  }\item[{char $\ast$$\ast$}]{cmd\+Parsed }\end{DoxyParamCaption})}
+
+
+
+find epsilone in command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & command \\
+\hline
+{\em cmd\+Parsed} & command parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no epsilone, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_a0103a0bf809d78c58cf23a173e038a65}\label{process_8c_a0103a0bf809d78c58cf23a173e038a65}} 
+\index{process.c@{process.c}!findPipe@{findPipe}}
+\index{findPipe@{findPipe}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{findPipe()}{findPipe()}}
+{\footnotesize\ttfamily int find\+Pipe (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd,  }\item[{char $\ast$$\ast$}]{cmd\+Piped }\end{DoxyParamCaption})}
+
+
+
+find pipe in command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & command \\
+\hline
+{\em cmd\+Piped} & command piped \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no pipe, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_a735e3d106ba7acc42fa97bd0a7d1d50e}\label{process_8c_a735e3d106ba7acc42fa97bd0a7d1d50e}} 
+\index{process.c@{process.c}!findRedirection@{findRedirection}}
+\index{findRedirection@{findRedirection}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{findRedirection()}{findRedirection()}}
+{\footnotesize\ttfamily int find\+Redirection (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd,  }\item[{char $\ast$$\ast$}]{cmd\+Parsed }\end{DoxyParamCaption})}
+
+
+
+find redirection in command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & command \\
+\hline
+{\em cmd\+Parsed} & command parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no redirection, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_a61579380f5d78ee84dc7aca8c3a3dc37}\label{process_8c_a61579380f5d78ee84dc7aca8c3a3dc37}} 
+\index{process.c@{process.c}!findSpace@{findSpace}}
+\index{findSpace@{findSpace}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{findSpace()}{findSpace()}}
+{\footnotesize\ttfamily void find\+Space (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd,  }\item[{char $\ast$$\ast$}]{cmd\+Parsed }\end{DoxyParamCaption})}
+
+
+
+find space in command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & command \\
+\hline
+{\em cmd\+Parsed} & command parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_aa760fca0639886fe9964e0dd382e8278}\label{process_8c_aa760fca0639886fe9964e0dd382e8278}} 
+\index{process.c@{process.c}!processArguments@{processArguments}}
+\index{processArguments@{processArguments}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{processArguments()}{processArguments()}}
+{\footnotesize\ttfamily void process\+Arguments (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{parsed }\end{DoxyParamCaption})}
+
+
+
+function which handle our commands 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed} & command parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if we don\textquotesingle{}t have a command, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_af656f1c8fb6ea747ccbc4d7b9307c875}\label{process_8c_af656f1c8fb6ea747ccbc4d7b9307c875}} 
+\index{process.c@{process.c}!processArgumentsBackground@{processArgumentsBackground}}
+\index{processArgumentsBackground@{processArgumentsBackground}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{processArgumentsBackground()}{processArgumentsBackground()}}
+{\footnotesize\ttfamily void process\+Arguments\+Background (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{parsed }\end{DoxyParamCaption})}
+
+
+
+function which handle our commands 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed} & command parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_aedc5216445be48f247095bf150a226b6}\label{process_8c_aedc5216445be48f247095bf150a226b6}} 
+\index{process.c@{process.c}!processArgumentsPipe@{processArgumentsPipe}}
+\index{processArgumentsPipe@{processArgumentsPipe}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{processArgumentsPipe()}{processArgumentsPipe()}}
+{\footnotesize\ttfamily void process\+Arguments\+Pipe (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{parsed,  }\item[{char $\ast$$\ast$}]{parsedpipe }\end{DoxyParamCaption})}
+
+
+
+function which handle our commands 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed} & command parsed \\
+\hline
+{\em parsedpipe} & command parsed pipe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if we don\textquotesingle{}t have a command, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_a4eaf734b6d65dab73139a01fe39c47ae}\label{process_8c_a4eaf734b6d65dab73139a01fe39c47ae}} 
+\index{process.c@{process.c}!processArgumentsRedirection@{processArgumentsRedirection}}
+\index{processArgumentsRedirection@{processArgumentsRedirection}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{processArgumentsRedirection()}{processArgumentsRedirection()}}
+{\footnotesize\ttfamily void process\+Arguments\+Redirection (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{parsed\+Cmd,  }\item[{char $\ast$$\ast$}]{parsed\+File }\end{DoxyParamCaption})}
+
+
+
+function which handle our commands 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+Cmd} & command parsed \\
+\hline
+{\em parsed\+File} & command parsed file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if we don\textquotesingle{}t have a command, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_a9e5d97c7defafdd3d131e82ba27e8531}\label{process_8c_a9e5d97c7defafdd3d131e82ba27e8531}} 
+\index{process.c@{process.c}!processCommand@{processCommand}}
+\index{processCommand@{processCommand}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{processCommand()}{processCommand()}}
+{\footnotesize\ttfamily int process\+Command (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd,  }\item[{char $\ast$$\ast$}]{cmd\+Parsed,  }\item[{char $\ast$$\ast$}]{cmd\+Piped }\end{DoxyParamCaption})}
+
+
+
+process command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & command \\
+\hline
+{\em cmd\+Parsed} & command parsed \\
+\hline
+{\em cmd\+Piped} & command piped \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no pipe, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{process_8c_a93c766c6e86f4f79e7507c21f1794e15}\label{process_8c_a93c766c6e86f4f79e7507c21f1794e15}} 
+\index{process.c@{process.c}!strsep@{strsep}}
+\index{strsep@{strsep}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{strsep()}{strsep()}}
+{\footnotesize\ttfamily char$\ast$ strsep (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{stringp,  }\item[{const char $\ast$}]{delim }\end{DoxyParamCaption})}
+
+
+
+function which handle our commands 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stringp} & \\
+\hline
+{\em delim} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}

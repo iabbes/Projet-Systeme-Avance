@@ -1,6 +1,11 @@
 #include "../headers/process.h"
 
 /**
+ * @file process.c
+ * @brief This file contains all the functions used to process the command
+ */
+
+/**
  * @brief find pipe in command
  * @param cmd command
  * @param cmdPiped command piped
@@ -272,8 +277,8 @@ void processArgumentsPipe(char **parsed, char **parsedpipe)
 
 /**
  * @brief function which handle our commands
- * @param parsed command parsed
- * @param parsedpipe command parsed pipe
+ * @param parsedCmd command parsed
+ * @param parsedFile command parsed file
  * @return 0 if we don't have a command, 1 otherwise
  */
 void processArgumentsRedirection(char** parsedCmd, char **parsedFile)
@@ -332,7 +337,7 @@ void processArgumentsRedirection(char** parsedCmd, char **parsedFile)
 /**
  * @brief function which handle our commands
  * @param parsed command parsed
- * @return 0 if we don't have a command, 1 otherwise
+ * @return None
  */
 void processArgumentsBackground(char **parsed)
 {
@@ -356,8 +361,9 @@ void processArgumentsBackground(char **parsed)
 
 /**
  * @brief function which handle our commands
- * @param cmdParsed command parsed
- * @return 0 if we don't have a command, 1 otherwise
+ * @param stringp 
+ * @param delim 
+ * @return char* 
  */
 char *strsep(char **stringp, const char *delim)
 {

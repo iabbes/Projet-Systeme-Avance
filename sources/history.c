@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "../headers/history.h"
+
+/** 
+ * @file history.c
+ * @brief This file contains all the functions used to log the history
+ */
+
 
 /**
  * @brief writes the command to the history file

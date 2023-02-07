@@ -1,6 +1,11 @@
 #include "../headers/text.h"
 
 /**
+ * @file text.c
+ * @brief This file contains all the text functions used in the shell
+*/
+
+/**
  * @brief      Prints welcome message.
  * @param      None
  * @return     None
