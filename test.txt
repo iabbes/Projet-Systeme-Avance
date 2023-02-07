@@ -1,0 +1,12 @@
+Makefile
+REPORT.md
+headers
+history.log
+history.o
+main.o
+process.o
+shell-project
+sources
+test.txt
+text.o
+utils.o
